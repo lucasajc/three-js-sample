@@ -11,7 +11,7 @@ const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight,
 const lightFirstSource = new LightBuilder().withPosition(100, 100, 100).withIntensity(0.75).build();
 const lightSecondSource = new LightBuilder().withPosition(-50, -50, 100).withIntensity(0.75).build();
 const container = new SphereBuilder()
-  .withRadius(50)
+  .withRadius(100)
   .withMaterial(new MeshStandardMaterial({ color: 0x000000 }))
   .withShadow()
   .build();
@@ -25,7 +25,7 @@ const orbitParticles =
     return new SphereBuilder().withRadius(1).withPosition(positionX, 0, 0).build()
   });
 const paths = orbitParticles.map((particle) => {
-  speed = speed + 0.001;
+  speed = speed + 0.0001;
   return new OrbitPath(container, particle, speed);
 });
 

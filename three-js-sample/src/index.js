@@ -1,2 +1,0 @@
-import "./animations/black-hole";
-

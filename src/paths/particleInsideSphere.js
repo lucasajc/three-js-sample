@@ -1,10 +1,7 @@
+import { r } from "../utils/numbers";
+
 const getRandomArbitrary = (minimum, maximum) => {
   return Math.random() * (maximum - minimum) + minimum;
-}
-
-const r = (a = 0, b = 0, c = 0) => {
-  const k = Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2);
-  return Math.sqrt(k);
 }
 
 class ParticleInsideSpherePath {

@@ -11,6 +11,7 @@ class PlaneBuilder {
     this.receiveShadow = false;
     this.castShadow = false;
     this.position = { x: 0, y: 0, z: 0 };
+    this.rotation = { x: 0, y: 0, z: 0 };
     this.dimensions = { width: 1, height: 1, widthSegments: 1, heightSegments: 1 };
   }
 
@@ -35,12 +36,18 @@ class PlaneBuilder {
     return this;
   }
 
+  withRotation(x = 0, y = 0, z = 0) {
+    this.rotation = { x, y, z };
+    return this;
+  }
+
   build() {
     const { width, height, widthSegments, heightSegments } = this.dimensions;
     const geometry = new PlaneGeometry(width, height, widthSegments, heightSegments)
     const plane = new Plane({ geometry, material: this.material });
     plane.receiveShadow = this.receiveShadow;
     plane.castShadow = this.castShadow;
+    plane.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z);
     plane.position.set(this.position.x, this.position.y, this.position.z);
 
     return plane;

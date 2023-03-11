@@ -1,2 +1,2 @@
-import "./animations/orbit";
+import "./animations/black-hole";
 

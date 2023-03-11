@@ -1,7 +1,4 @@
-const r = (a = 0, b = 0, c = 0) => {
-  const k = Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2);
-  return Math.sqrt(k);
-}
+import { r } from "../utils/numbers";
 
 class OrbitPath {
   speed;
